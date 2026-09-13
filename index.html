@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Where everyone is</title>
+
+<!-- Leaflet (map) + markercluster (same-city overlap) — free, no API key -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+
+<style>
+  :root { --bg:#0f1115; --panel:#171a21; --line:#262b36; --text:#e6e8ec; --muted:#9aa3b2; --accent:#4f9cff; }
+  * { box-sizing:border-box; }
+  html,body { margin:0; height:100%; font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif; background:var(--bg); color:var(--text); }
+  #app { display:flex; height:100%; }
+  #sidebar { width:340px; flex:0 0 340px; border-right:1px solid var(--line); display:flex; flex-direction:column; background:var(--panel); }
+  #map { flex:1; }
+  header { padding:16px 16px 8px; }
+  header h1 { font-size:16px; margin:0 0 2px; }
+  header p { font-size:12px; color:var(--muted); margin:0; }
+  .controls { padding:8px 16px 12px; border-bottom:1px solid var(--line); }
+  .controls input { width:100%; padding:9px 10px; border:1px solid var(--line); border-radius:8px; background:#0d1016; color:var(--text); font-size:14px; }
+  .modes { display:flex; gap:6px; margin-top:8px; }
+  .modes button { flex:1; padding:7px; border:1px solid var(--line); border-radius:8px; background:#0d1016; color:var(--muted); font-size:12px; cursor:pointer; }
+  .modes button.active { color:var(--text); border-color:var(--accent); }
+  #count { padding:8px 16px; font-size:11px; color:var(--muted); }
+  #list { list-style:none; margin:0; padding:0 8px 16px; overflow-y:auto; flex:1; }
+  #list li { padding:9px 10px; border-radius:8px; cursor:pointer; }
+  #list li:hover, #list li.hi { background:#20242e; }
+  #list .nm { font-size:14px; }
+  #list .ct { font-size:12px; color:var(--muted); }
+  .grp { font-size:11px; text-transform:uppercase; letter-spacing:.06em; color:var(--muted); padding:12px 10px 4px; }
+  @media (max-width:720px){ #app{flex-direction:column;} #sidebar{width:100%;flex:0 0 auto;max-height:50%;} }
+</style>
+</head>
+<body>
+<div id="app">
+  <div id="sidebar">
+    <header>
+      <h1>Where everyone is</h1>
+      <p>Search a name, or a city to see who's there.</p>
+    </header>
+    <div class="controls">
+      <input id="q" type="text" placeholder="Search…" autocomplete="off">
+      <div class="modes">
+        <button data-mode="person" class="active">By person</button>
+        <button data-mode="location">By location</button>
+      </div>
+    </div>
+    <div id="count"></div>
+    <ul id="list"></ul>
+  </div>
+  <div id="map"></div>
+</div>
+
+<script>
+const state = { people: [], mode: "person", q: "", markers: new Map() };
+
+const map = L.map("map", { worldCopyJump:true }).setView([20,10], 2);
+L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+  maxZoom: 18, attribution: "&copy; OpenStreetMap contributors"
+}).addTo(map);
+const cluster = L.markerClusterGroup();
+map.addLayer(cluster);
+
+fetch("people.json")
+  .then(r => { if(!r.ok) throw new Error(r.status); return r.json(); })
+  .then(data => { state.people = data; buildMarkers(); render(); })
+  .catch(e => {
+    document.getElementById("count").textContent =
+      "Could not load people.json (" + e.message + ").";
+  });
+
+function buildMarkers(){
+  state.people.forEach((p, i) => {
+    const m = L.marker([p.lat, p.lng]).bindPopup(`<b>${esc(p.name)}</b><br>${esc(p.city)}`);
+    m.on("click", () => highlightList(i));
+    state.markers.set(i, m);
+  });
+}
+
+function currentMatches(){
+  const q = state.q.trim().toLowerCase();
+  return state.people
+    .map((p, i) => ({ ...p, i }))
+    .filter(p => {
+      if (!q) return true;
+      return state.mode === "person"
+        ? p.name.toLowerCase().includes(q)
+        : p.city.toLowerCase().includes(q);
+    });
+}
+
+function render(){
+  const matches = currentMatches();
+
+  // map: show only matching markers, cluster same-city overlaps
+  cluster.clearLayers();
+  matches.forEach(p => cluster.addLayer(state.markers.get(p.i)));
+  document.getElementById("count").textContent =
+    `${matches.length} of ${state.people.length} shown`;
+
+  const list = document.getElementById("list");
+  list.innerHTML = "";
+
+  if (state.mode === "location") {
+    // group by city
+    const byCity = {};
+    matches.forEach(p => (byCity[p.city] = byCity[p.city] || []).push(p));
+    Object.keys(byCity).sort().forEach(city => {
+      const h = document.createElement("div");
+      h.className = "grp"; h.textContent = `${city} (${byCity[city].length})`;
+      list.appendChild(h);
+      byCity[city].forEach(p => list.appendChild(row(p)));
+    });
+  } else {
+    matches.sort((a,b)=>a.name.localeCompare(b.name)).forEach(p => list.appendChild(row(p)));
+  }
+
+  if (matches.length && state.q.trim()) fitTo(matches);
+}
+
+function row(p){
+  const li = document.createElement("li");
+  li.dataset.idx = p.i;
+  li.innerHTML = `<div class="nm">${esc(p.name)}</div><div class="ct">${esc(p.city)}</div>`;
+  li.onclick = () => {
+    const m = state.markers.get(p.i);
+    map.setView([p.lat, p.lng], 6);
+    cluster.zoomToShowLayer(m, () => m.openPopup());
+    highlightList(p.i);
+  };
+  return li;
+}
+
+function highlightList(i){
+  document.querySelectorAll("#list li").forEach(li =>
+    li.classList.toggle("hi", +li.dataset.idx === i));
+  const el = document.querySelector(`#list li[data-idx="${i}"]`);
+  if (el) el.scrollIntoView({ block:"nearest" });
+}
+
+function fitTo(matches){
+  const b = L.latLngBounds(matches.map(p => [p.lat, p.lng]));
+  map.fitBounds(b.pad(0.3), { maxZoom: 6 });
+}
+
+function esc(s){ return String(s).replace(/[&<>"]/g, c =>
+  ({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;" }[c])); }
+
+document.getElementById("q").addEventListener("input", e => {
+  state.q = e.target.value; render();
+});
+document.querySelectorAll(".modes button").forEach(btn => {
+  btn.onclick = () => {
+    state.mode = btn.dataset.mode;
+    document.querySelectorAll(".modes button").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+    render();
+  };
+});
+</script>
+</body>
+</html>

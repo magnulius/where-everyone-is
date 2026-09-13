@@ -1,0 +1,272 @@
+[
+  {
+    "name": "Cayle",
+    "city": "Maastricht, Netherlands",
+    "lat": 50.8514,
+    "lng": 5.691
+  },
+  {
+    "name": "Veronika",
+    "city": "Maastricht, Netherlands",
+    "lat": 50.8514,
+    "lng": 5.691
+  },
+  {
+    "name": "Miranda",
+    "city": "Maastricht, Netherlands",
+    "lat": 50.8514,
+    "lng": 5.691
+  },
+  {
+    "name": "Amber",
+    "city": "Amsterdam, Netherlands",
+    "lat": 52.3676,
+    "lng": 4.9041
+  },
+  {
+    "name": "Joke",
+    "city": "Amsterdam, Netherlands",
+    "lat": 52.3676,
+    "lng": 4.9041
+  },
+  {
+    "name": "Elena",
+    "city": "Berlin, Germany",
+    "lat": 52.52,
+    "lng": 13.405
+  },
+  {
+    "name": "Markus",
+    "city": "Berlin, Germany",
+    "lat": 52.52,
+    "lng": 13.405
+  },
+  {
+    "name": "Max",
+    "city": "Berlin, Germany",
+    "lat": 52.52,
+    "lng": 13.405
+  },
+  {
+    "name": "Jenny",
+    "city": "Berlin, Germany",
+    "lat": 52.52,
+    "lng": 13.405
+  },
+  {
+    "name": "Lea",
+    "city": "Berlin, Germany",
+    "lat": 52.52,
+    "lng": 13.405
+  },
+  {
+    "name": "Jascha",
+    "city": "Berlin, Germany",
+    "lat": 52.52,
+    "lng": 13.405
+  },
+  {
+    "name": "Ana-Maria",
+    "city": "Berlin, Germany",
+    "lat": 52.52,
+    "lng": 13.405
+  },
+  {
+    "name": "Sarah",
+    "city": "Brussels, Belgium",
+    "lat": 50.8503,
+    "lng": 4.3517
+  },
+  {
+    "name": "Ben",
+    "city": "Brussels, Belgium",
+    "lat": 50.8503,
+    "lng": 4.3517
+  },
+  {
+    "name": "Fanny",
+    "city": "Brussels, Belgium",
+    "lat": 50.8503,
+    "lng": 4.3517
+  },
+  {
+    "name": "Jonathan",
+    "city": "London, England",
+    "lat": 51.5074,
+    "lng": -0.1278
+  },
+  {
+    "name": "Nathan",
+    "city": "London, England",
+    "lat": 51.5074,
+    "lng": -0.1278
+  },
+  {
+    "name": "Otis",
+    "city": "London, England",
+    "lat": 51.5074,
+    "lng": -0.1278
+  },
+  {
+    "name": "Marta",
+    "city": "Paris, France",
+    "lat": 48.8566,
+    "lng": 2.3522
+  },
+  {
+    "name": "Veronika",
+    "city": "Paris, France",
+    "lat": 48.8566,
+    "lng": 2.3522
+  },
+  {
+    "name": "Ravenna",
+    "city": "Paris, France",
+    "lat": 48.8566,
+    "lng": 2.3522
+  },
+  {
+    "name": "Valentina",
+    "city": "Bristol, England",
+    "lat": 51.4545,
+    "lng": -2.5879
+  },
+  {
+    "name": "Eden",
+    "city": "York, England",
+    "lat": 53.96,
+    "lng": -1.0873
+  },
+  {
+    "name": "Michael",
+    "city": "NYC, United States",
+    "lat": 40.7128,
+    "lng": -74.006
+  },
+  {
+    "name": "Timmy",
+    "city": "Washington DC, United States",
+    "lat": 38.9072,
+    "lng": -77.0369
+  },
+  {
+    "name": "Paulina",
+    "city": "Warsaw, Poland",
+    "lat": 52.2297,
+    "lng": 21.0122
+  },
+  {
+    "name": "Matthew",
+    "city": "Bonn, Germany",
+    "lat": 50.7374,
+    "lng": 7.0982
+  },
+  {
+    "name": "Tim",
+    "city": "Bonn, Germany",
+    "lat": 50.7374,
+    "lng": 7.0982
+  },
+  {
+    "name": "Sabine",
+    "city": "Bonn, Germany",
+    "lat": 50.7374,
+    "lng": 7.0982
+  },
+  {
+    "name": "Manuel",
+    "city": "Bonn, Germany",
+    "lat": 50.7374,
+    "lng": 7.0982
+  },
+  {
+    "name": "Christina",
+    "city": "Freiburg, Germany",
+    "lat": 47.999,
+    "lng": 7.8421
+  },
+  {
+    "name": "Jakob",
+    "city": "Bremen, Germany",
+    "lat": 53.0793,
+    "lng": 8.8017
+  },
+  {
+    "name": "Maria",
+    "city": "Athens, Greece",
+    "lat": 37.9838,
+    "lng": 23.7275
+  },
+  {
+    "name": "Jan",
+    "city": "Düsseldorf, Germany",
+    "lat": 51.2277,
+    "lng": 6.7735
+  },
+  {
+    "name": "Raphael",
+    "city": "Aachen, Germany",
+    "lat": 50.7753,
+    "lng": 6.0839
+  },
+  {
+    "name": "Hjördís",
+    "city": "Stockholm, Sweden",
+    "lat": 59.3293,
+    "lng": 18.0686
+  },
+  {
+    "name": "Praachi",
+    "city": "Stockholm, Sweden",
+    "lat": 59.3293,
+    "lng": 18.0686
+  },
+  {
+    "name": "Peggy",
+    "city": "Edinburgh, Scotland",
+    "lat": 55.9533,
+    "lng": -3.1883
+  },
+  {
+    "name": "Laura",
+    "city": "The Hague, Netherlands",
+    "lat": 52.0705,
+    "lng": 4.3007
+  },
+  {
+    "name": "Elze",
+    "city": "The Hague, Netherlands",
+    "lat": 52.0705,
+    "lng": 4.3007
+  },
+  {
+    "name": "Adrienne",
+    "city": "Dublin, Ireland",
+    "lat": 53.3498,
+    "lng": -6.2603
+  },
+  {
+    "name": "Simon",
+    "city": "Oxford, England",
+    "lat": 51.752,
+    "lng": -1.2577
+  },
+  {
+    "name": "Ennio",
+    "city": "Zurich, Switzerland",
+    "lat": 47.3769,
+    "lng": 8.5417
+  },
+  {
+    "name": "Jana C.",
+    "city": "Kampala, Uganda",
+    "lat": 0.3476,
+    "lng": 32.5825
+  },
+  {
+    "name": "Lori",
+    "city": "Prague, Czech Republic",
+    "lat": 50.0755,
+    "lng": 14.4378
+  }
+]

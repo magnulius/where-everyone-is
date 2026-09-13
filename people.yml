@@ -1,0 +1,103 @@
+# One entry per person. To add someone:
+#   1. Copy a block below.
+#   2. Fill in name + city.
+#   3. Look up coordinates: open https://www.openstreetmap.org, search the city,
+#      right-click the spot -> "Show address" (or read lat/lon from the URL).
+#      Paste as lat / lng. 4-5 decimals is plenty.
+# Commit the file. GitHub Pages redeploys automatically.
+
+people:
+  # Maastricht, Netherlands
+  - { name: Cayle,      city: "Maastricht, Netherlands",   lat: 50.8514,  lng: 5.6910 }
+  - { name: Veronika,   city: "Maastricht, Netherlands",   lat: 50.8514,  lng: 5.6910 }
+  - { name: Miranda,    city: "Maastricht, Netherlands",   lat: 50.8514,  lng: 5.6910 }
+
+  # Amsterdam, Netherlands
+  - { name: Amber,      city: "Amsterdam, Netherlands",    lat: 52.3676,  lng: 4.9041 }
+  - { name: Joke,       city: "Amsterdam, Netherlands",    lat: 52.3676,  lng: 4.9041 }
+
+  # Berlin, Germany
+  - { name: Elena,      city: "Berlin, Germany",           lat: 52.5200,  lng: 13.4050 }
+  - { name: Markus,     city: "Berlin, Germany",           lat: 52.5200,  lng: 13.4050 }
+  - { name: Max,        city: "Berlin, Germany",           lat: 52.5200,  lng: 13.4050 }
+  - { name: Jenny,      city: "Berlin, Germany",           lat: 52.5200,  lng: 13.4050 }
+  - { name: Lea,        city: "Berlin, Germany",           lat: 52.5200,  lng: 13.4050 }
+  - { name: Jascha,     city: "Berlin, Germany",           lat: 52.5200,  lng: 13.4050 }
+  - { name: Ana-Maria,  city: "Berlin, Germany",           lat: 52.5200,  lng: 13.4050 }
+
+  # Brussels, Belgium
+  - { name: Sarah,      city: "Brussels, Belgium",         lat: 50.8503,  lng: 4.3517 }
+  - { name: Ben,        city: "Brussels, Belgium",         lat: 50.8503,  lng: 4.3517 }
+  - { name: Fanny,      city: "Brussels, Belgium",         lat: 50.8503,  lng: 4.3517 }
+
+  # London, England
+  - { name: Jonathan,   city: "London, England",           lat: 51.5074,  lng: -0.1278 }
+  - { name: Nathan,     city: "London, England",           lat: 51.5074,  lng: -0.1278 }
+  - { name: Otis,       city: "London, England",           lat: 51.5074,  lng: -0.1278 }
+
+  # Paris, France
+  - { name: Marta,      city: "Paris, France",             lat: 48.8566,  lng: 2.3522 }
+  - { name: Veronika,   city: "Paris, France",             lat: 48.8566,  lng: 2.3522 }
+  - { name: Ravenna,    city: "Paris, France",             lat: 48.8566,  lng: 2.3522 }
+
+  # Bristol, England
+  - { name: Valentina,  city: "Bristol, England",          lat: 51.4545,  lng: -2.5879 }
+
+  # York, England
+  - { name: Eden,       city: "York, England",             lat: 53.9600,  lng: -1.0873 }
+
+  # NYC, United States
+  - { name: Michael,    city: "NYC, United States",        lat: 40.7128,  lng: -74.0060 }
+
+  # Washington DC, United States
+  - { name: Timmy,      city: "Washington DC, United States", lat: 38.9072, lng: -77.0369 }
+
+  # Warsaw, Poland
+  - { name: Paulina,    city: "Warsaw, Poland",            lat: 52.2297,  lng: 21.0122 }
+
+  # Bonn, Germany
+  - { name: Matthew,    city: "Bonn, Germany",             lat: 50.7374,  lng: 7.0982 }
+  - { name: Tim,        city: "Bonn, Germany",             lat: 50.7374,  lng: 7.0982 }
+  - { name: Sabine,     city: "Bonn, Germany",             lat: 50.7374,  lng: 7.0982 }
+  - { name: Manuel,     city: "Bonn, Germany",             lat: 50.7374,  lng: 7.0982 }
+
+  # Freiburg, Germany
+  - { name: Christina,  city: "Freiburg, Germany",         lat: 47.9990,  lng: 7.8421 }
+
+  # Bremen, Germany
+  - { name: Jakob,      city: "Bremen, Germany",           lat: 53.0793,  lng: 8.8017 }
+
+  # Athens, Greece
+  - { name: Maria,      city: "Athens, Greece",            lat: 37.9838,  lng: 23.7275 }
+
+  # Düsseldorf, Germany
+  - { name: Jan,        city: "Düsseldorf, Germany",       lat: 51.2277,  lng: 6.7735 }
+
+  # Aachen, Germany
+  - { name: Raphael,    city: "Aachen, Germany",           lat: 50.7753,  lng: 6.0839 }
+
+  # Stockholm, Sweden
+  - { name: Hjördís,    city: "Stockholm, Sweden",         lat: 59.3293,  lng: 18.0686 }
+  - { name: Praachi,    city: "Stockholm, Sweden",         lat: 59.3293,  lng: 18.0686 }
+
+  # Edinburgh, Scotland
+  - { name: Peggy,      city: "Edinburgh, Scotland",       lat: 55.9533,  lng: -3.1883 }
+
+  # The Hague, Netherlands
+  - { name: Laura,      city: "The Hague, Netherlands",    lat: 52.0705,  lng: 4.3007 }
+  - { name: Elze,       city: "The Hague, Netherlands",    lat: 52.0705,  lng: 4.3007 }
+
+  # Dublin, Ireland
+  - { name: Adrienne,   city: "Dublin, Ireland",           lat: 53.3498,  lng: -6.2603 }
+
+  # Oxford, England
+  - { name: Simon,      city: "Oxford, England",           lat: 51.7520,  lng: -1.2577 }
+
+  # Zurich, Switzerland  (list said "Sweden"; Zurich is in Switzerland)
+  - { name: Ennio,      city: "Zurich, Switzerland",       lat: 47.3769,  lng: 8.5417 }
+
+  # Kampala, Uganda
+  - { name: "Jana C.",  city: "Kampala, Uganda",           lat: 0.3476,   lng: 32.5825 }
+
+  # Prague, Czech Republic
+  - { name: Lori,       city: "Prague, Czech Republic",    lat: 50.0755,  lng: 14.4378 }
