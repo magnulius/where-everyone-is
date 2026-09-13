@@ -101,3 +101,9 @@ people:
 
   # Prague, Czech Republic
   - { name: Lori,       city: "Prague, Czech Republic",    lat: 50.0755,  lng: 14.4378 }
+
+  # Brasília, Brazil
+  - { name: Gustavo,    city: "Brasília, Brazil",           lat: -15.7939, lng: -47.8828 }
+
+  # Geldern, Germany
+  - { name: Steffi,     city: "Geldern, Germany",           lat: 51.5194,  lng: 6.3299 }
