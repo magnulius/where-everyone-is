@@ -24,6 +24,7 @@ people:
   - { name: Lea,        city: "Berlin, Germany",           lat: 52.5200,  lng: 13.4050 }
   - { name: Jascha,     city: "Berlin, Germany",           lat: 52.5200,  lng: 13.4050 }
   - { name: Ana-Maria,  city: "Berlin, Germany",           lat: 52.5200,  lng: 13.4050 }
+  - { name: Malu,       city: "Berlin, Germany",           lat: 52.5200,  lng: 13.4050 }
 
   # Brussels, Belgium
   - { name: Sarah,      city: "Brussels, Belgium",         lat: 50.8503,  lng: 4.3517 }
